@@ -241,6 +241,68 @@ export type SportType =
   | 'Workout'
   | 'Yoga';
 
+export const STRAVA_ACTIVITY_TYPE_ORDER: SportType[] = [
+  'Run',
+  'Ride',
+  'Walk',
+  'Hike',
+  'TrailRun',
+  'VirtualRun',
+  'Swim',
+  'Workout',
+  'WeightTraining',
+  'Yoga',
+  'Crossfit',
+  'MountainBikeRide',
+  'GravelRide',
+  'EBikeRide',
+  'EMountainBikeRide',
+  'VirtualRide',
+  'Rowing',
+  'VirtualRow',
+  'Handcycle',
+  'Wheelchair',
+  'Velomobile',
+  'Golf',
+  'Soccer',
+  'Tennis',
+  'TableTennis',
+  'Badminton',
+  'Pickleball',
+  'Squash',
+  'Racquetball',
+  'Pilates',
+  'HighIntensityIntervalTraining',
+  'Elliptical',
+  'StairStepper',
+  'AlpineSki',
+  'BackcountrySki',
+  'NordicSki',
+  'Snowboard',
+  'Snowshoe',
+  'IceSkate',
+  'InlineSkate',
+  'RollerSki',
+  'Skateboard',
+  'RockClimbing',
+  'Surfing',
+  'Kitesurf',
+  'Windsurf',
+  'Sail',
+  'StandUpPaddling',
+  'Canoeing',
+  'Kayaking',
+];
+
+const STRAVA_ACTIVITY_TYPE_LABEL_OVERRIDES: Partial<Record<SportType, string>> = {
+  EBikeRide: 'E-Bike Ride',
+  EMountainBikeRide: 'E-Mountain Bike Ride',
+};
+
+export function getActivityTypeLabel(activityType: SportType): string {
+  return STRAVA_ACTIVITY_TYPE_LABEL_OVERRIDES[activityType] ?? activityType.replace(/([a-z])([A-Z])/g, '$1 $2');
+}
+
 export function getRunTypes(): Array<Partial<SportType>> {
   return ['Run', 'TrailRun', 'VirtualRun'];
 }
