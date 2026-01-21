@@ -189,110 +189,60 @@ export type ActivityType =
   | 'Workout'
   | 'Yoga';
 
-export type SportType =
-  | 'AlpineSki'
-  | 'BackcountrySki'
-  | 'Badminton'
-  | 'Canoeing'
-  | 'Crossfit'
-  | 'EBikeRide'
-  | 'Elliptical'
-  | 'EMountainBikeRide'
-  | 'Golf'
-  | 'GravelRide'
-  | 'Handcycle'
-  | 'HighIntensityIntervalTraining'
-  | 'Hike'
-  | 'IceSkate'
-  | 'InlineSkate'
-  | 'Kayaking'
-  | 'Kitesurf'
-  | 'MountainBikeRide'
-  | 'NordicSki'
-  | 'Pickleball'
-  | 'Pilates'
-  | 'Racquetball'
-  | 'Ride'
-  | 'RockClimbing'
-  | 'RollerSki'
-  | 'Rowing'
-  | 'Run'
-  | 'Sail'
-  | 'Skateboard'
-  | 'Snowboard'
-  | 'Snowshoe'
-  | 'Soccer'
-  | 'Squash'
-  | 'StairStepper'
-  | 'StandUpPaddling'
-  | 'Surfing'
-  | 'Swim'
-  | 'TableTennis'
-  | 'Tennis'
-  | 'TrailRun'
-  | 'Velomobile'
-  | 'VirtualRide'
-  | 'VirtualRow'
-  | 'VirtualRun'
-  | 'Walk'
-  | 'WeightTraining'
-  | 'Wheelchair'
-  | 'Windsurf'
-  | 'Workout'
-  | 'Yoga';
-
-export const STRAVA_ACTIVITY_TYPE_ORDER: SportType[] = [
-  'Run',
-  'Ride',
-  'Walk',
-  'Hike',
-  'TrailRun',
-  'VirtualRun',
-  'Swim',
-  'Workout',
-  'WeightTraining',
-  'Yoga',
-  'Crossfit',
-  'MountainBikeRide',
-  'GravelRide',
-  'EBikeRide',
-  'EMountainBikeRide',
-  'VirtualRide',
-  'Rowing',
-  'VirtualRow',
-  'Handcycle',
-  'Wheelchair',
-  'Velomobile',
-  'Golf',
-  'Soccer',
-  'Tennis',
-  'TableTennis',
-  'Badminton',
-  'Pickleball',
-  'Squash',
-  'Racquetball',
-  'Pilates',
-  'HighIntensityIntervalTraining',
-  'Elliptical',
-  'StairStepper',
+export const STRAVA_SPORT_TYPES = [
   'AlpineSki',
   'BackcountrySki',
-  'NordicSki',
-  'Snowboard',
-  'Snowshoe',
+  'Badminton',
+  'Canoeing',
+  'Crossfit',
+  'EBikeRide',
+  'Elliptical',
+  'EMountainBikeRide',
+  'Golf',
+  'GravelRide',
+  'Handcycle',
+  'HighIntensityIntervalTraining',
+  'Hike',
   'IceSkate',
   'InlineSkate',
-  'RollerSki',
-  'Skateboard',
-  'RockClimbing',
-  'Surfing',
-  'Kitesurf',
-  'Windsurf',
-  'Sail',
-  'StandUpPaddling',
-  'Canoeing',
   'Kayaking',
-];
+  'Kitesurf',
+  'MountainBikeRide',
+  'NordicSki',
+  'Pickleball',
+  'Pilates',
+  'Racquetball',
+  'Ride',
+  'RockClimbing',
+  'RollerSki',
+  'Rowing',
+  'Run',
+  'Sail',
+  'Skateboard',
+  'Snowboard',
+  'Snowshoe',
+  'Soccer',
+  'Squash',
+  'StairStepper',
+  'StandUpPaddling',
+  'Surfing',
+  'Swim',
+  'TableTennis',
+  'Tennis',
+  'TrailRun',
+  'Velomobile',
+  'VirtualRide',
+  'VirtualRow',
+  'VirtualRun',
+  'Walk',
+  'WeightTraining',
+  'Wheelchair',
+  'Windsurf',
+  'Workout',
+  'Yoga',
+] as const;
+
+export type SportType = (typeof STRAVA_SPORT_TYPES)[number];
 
 const STRAVA_ACTIVITY_TYPE_LABEL_OVERRIDES: Partial<Record<SportType, string>> = {
   EBikeRide: 'E-Bike Ride',

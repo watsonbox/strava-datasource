@@ -16,7 +16,7 @@ import {
   StravaAthlete,
   TopAchievementStat,
   StravaActivity,
-  STRAVA_ACTIVITY_TYPE_ORDER,
+  STRAVA_SPORT_TYPES,
   getActivityTypeLabel,
 } from '../types';
 import StravaDatasource from '../datasource';
@@ -55,7 +55,7 @@ const stravaActivityStatOptions: Array<SelectableValue<StravaActivityStat>> = [
 
 const stravaActivityTypeOptions: Array<SelectableValue<StravaActivityType>> = [
   { value: null, label: 'All' },
-  ...STRAVA_ACTIVITY_TYPE_ORDER.map((activityType) => ({
+  ...STRAVA_SPORT_TYPES.map((activityType) => ({
     value: activityType,
     label: getActivityTypeLabel(activityType),
   })),
